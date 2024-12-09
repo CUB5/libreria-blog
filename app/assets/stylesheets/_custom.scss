@@ -1,0 +1,46 @@
+$color-primary: #1E90FF;
+$color-accent: #FFD700;
+$color-light: #F0F8FF;
+$color-dark: #2C3E50;
+
+body, nav {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-submenu {
+    background-color: $color-primary;
+    color: white;
+
+    a {
+        margin-left: 5px;
+        text-decoration: none;
+        color: white;
+    }
+    
+    a:hover {
+        text-decoration: none; /* Asegura que no se aplique subrayado al pasar el cursor */
+        color: lightgray;      /* Opcional: cambia ligeramente el color en hover */
+    }
+
+}
+
+.nav-menu {
+    color: green;
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    a {
+        margin-left: 5px;
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover{
+        color: lightgray;
+    }
+
+}
+
