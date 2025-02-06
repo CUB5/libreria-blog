@@ -9,10 +9,12 @@ $color-2: #0a2472ff;
 $color-3: #0e6ba8ff;
 $color-4: #a6e1faff;
 
-body, nav {
+html, body {
     margin: 0;
     padding: 0;
-    width: 100%;
+    height: 100%; // Cubrir todo el alto de pagina
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-submenu {
@@ -21,7 +23,7 @@ body, nav {
     height: 30px;
     display: flex;
     align-items: center;
-    padding-left: 5px;
+    padding-left: 15px;
 
     a {
         margin-right: 25px;
@@ -41,7 +43,24 @@ body, nav {
     height: 80px;
     display: flex;
     align-items: center;
-    padding-left: 5px;
+    padding-left: 15px;
+
+    .contact-nav {
+        margin-left: auto;
+        
+        a {
+            color: #FFF;
+            background-color: $color-3;
+            padding: 10px;
+            transition: background-color 0.3s ease, padding 0.3s ease;
+        }
+
+        a:hover {
+            color: #FFF;
+            background-color: $color-3;
+            padding: 15px;
+        }
+    }
 
     a {
         margin-right: 15px;
@@ -56,8 +75,27 @@ body, nav {
 
 }
 
-.mainpage-body > div {
-    display: flex;
-    justify-content: center;
+.mainpage-body {
+    flex: 1; // Cubrir todo el alto de la pagina si el contenido no es suficiente para que el footer quede abajo
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
 }
 
+.footer {
+    color: #FFF;
+    background-color: #000;
+    gap: 5vw;
+
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .footer-logo {
+        padding: 0 5vw;
+    }
+
+}

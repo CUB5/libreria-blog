@@ -1,16 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<div class="mainpage-body">
+  <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Books" %>
+  <% content_for :title, "Books" %>
 
-<h1>Books</h1>
+  <h1>Books</h1>
 
-<div id="books">
-  <% @books.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
-  <% end %>
+  <div id="books">
+    <% @books.each do |book| %>
+      <%= render book %>
+      <p>
+        <%= link_to "Show this book", book %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "New book", new_book_path %>
 </div>
-
-<%= link_to "New book", new_book_path %>
