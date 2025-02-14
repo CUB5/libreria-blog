@@ -1,18 +1,27 @@
 <nav class="nav">
     <div class="nav-submenu">  
-        <a href="/about">Nosotros</a>
-        <a href="/documentation">Documentacion</a>
-        <a href="/blog">Blog</a>
-        <a href="/work">Trabaja con nosotros</a>
-        <a href="/digitalization">Digitalizacion</a>
+        <a href="/about"><%= t("nav.navsubmenu.nosotros") %></a>
+        <a href="/documentation"><%= t("nav.navsubmenu.documentacion") %></a>
+        <a href="/blog"><%= t("nav.navsubmenu.blog") %></a>
+        <a href="/work"><%= t("nav.navsubmenu.trabaja_con_nosotros") %></a>
+        <a href="/digitalization"><%= t("nav.navsubmenu.digitalizacion") %></a>
     </div>
 
     <div class="nav-menu">
         <a href="/" id="logo"><%= image_tag 'logo.png', height: 50 %></a>
-        <a href="/books">Libros</a>
-        <a href="/services">Servicios</a>
-        <a href="/examples">Ejemplos</a>
-        <a href="/contact">Contacto</a>
+        <a href="/books"><%= t("nav.navmenu.libros") %></a>
+        <a href="/services"><%= t("nav.navmenu.servicios") %></a>
+        <a href="/examples"><%= t("nav.navmenu.ejemplos") %></a>
+        <a href="/contact"><%= t("nav.navmenu.contacto") %></a>
+        <div class="languaje-selector">
+            <%= link_to url_for(locale: :es) do %>
+                <%= image_tag "https://flagcdn.com/w40/es.png", alt: "Español", width: 24, height: 16 %>
+            <% end %>
+
+            <%= link_to url_for(locale: :en) do %>
+                <%= image_tag "https://flagcdn.com/w40/gb.png", alt: "English", width: 24, height: 16 %>
+            <% end %>
+        </div>
         
         <div class="contact-nav">
             <a href="tel:+123456789">123456789</a>

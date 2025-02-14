@@ -1,0 +1,13 @@
+es:
+  nav:
+    navmenu:
+      libros: "Libros"
+      servicios: "Servicios"
+      ejemplos: "Ejemplos"
+      contacto: "Contacto"
+    navsubmenu:
+      nosotros: "Nosotros"
+      documentacion: "Documentación"
+      blog: "Blog"
+      trabaja_con_nosotros: "Trabaja con nosotros"
+      digitalizacion: "Digitalizacion"

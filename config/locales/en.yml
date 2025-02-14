@@ -28,4 +28,15 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  nav:
+    navmenu:
+      libros: "Books"
+      servicios: "Services"
+      ejemplos: "Examples"
+      contacto: "Contact"
+    navsubmenu:
+      nosotros: "About us"
+      documentacion: "Documentation"
+      blog: "Blog"
+      trabaja_con_nosotros: "Work with us"
+      digitalizacion: "Digitalization"

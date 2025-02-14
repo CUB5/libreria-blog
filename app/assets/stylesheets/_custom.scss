@@ -45,8 +45,11 @@ html, body {
     align-items: center;
     padding-left: 15px;
 
-    .contact-nav {
+    .languaje-selector {
         margin-left: auto;
+    }
+
+    .contact-nav {
         
         a {
             color: #FFF;
@@ -98,4 +101,38 @@ html, body {
         padding: 0 5vw;
     }
 
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+
+    .carousel-image {
+        width: 100vw;
+        height: 600px;
+        overflow: hidden;
+    }
+
+    .carousel-home {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .carousel-box{
+        position: absolute;
+
+        background: $color-3; /* Fondo semitransparente */
+        color: white;
+
+        text-align: center;
+        
+        padding: 20px;
+        border-top-right-radius: 10px;
+
+        transform: translate(0%, 108%);
+        width: 500px;
+        height: 150px;
+    }
 }

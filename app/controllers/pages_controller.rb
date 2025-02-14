@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
 
     def index
-
+        images_path = Rails.root.join("app/assets/images/gallery/home")
+        images = Dir.glob("#{images_path}/*.{jpg,png,jpeg,gif}")
+        @random_image = images.sample.gsub("#{Rails.root}/app/assets/images/", "")
     end
 
     def show 
