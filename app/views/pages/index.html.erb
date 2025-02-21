@@ -2,21 +2,93 @@
 <div class="">
     <%= render"carousel" %>
 </div>
-<div class="">
-    <p>Categorias TOP</p>
+<div class="home-secc">
+    <div style="margin-bottom: 30px; flex-direction: column">
+        <h1><%= t("home.secc1.title") %></h1>
+        <p class="caption"><%= t("home.secc1.caption") %></p>
+    </div>
+    <div class="secc1-cat">
+        <div>
+            <%= image_tag 'gallery/home/269727-3840x2160-desktop-4k-family-guy-background-photo.jpg', height: 403, width: 305 %>
+            <div class="white-box">
+                <h1>Family Guy</h1>
+            </div>
+        </div>
+        <div style="margin-left: 9px;">
+            <%= image_tag 'gallery/home/269727-3840x2160-desktop-4k-family-guy-background-photo.jpg', height: 403, width: 305 %>
+            <div class="white-box">
+                <h1>Family Guy</h1>
+            </div>
+        </div>
+        <div style="margin-left: 9px;">
+            <%= image_tag 'gallery/home/269727-3840x2160-desktop-4k-family-guy-background-photo.jpg', height: 403, width: 305 %>
+            <div class="white-box">
+                <h1>Family Guy</h1>
+            </div>
+        </div>
+        <div style="margin-left: 9px;">
+            <%= image_tag 'gallery/home/269727-3840x2160-desktop-4k-family-guy-background-photo.jpg', height: 403, width: 305 %>
+            <div class="white-box">
+                <h1>Family Guy</h1>
+            </div>
+        </div>
+    </div>
 </div> 
-<div class="">
-    <p>Custom Banner</p>
+<div class="home-secc" style="margin-top: 100px">
+    <div>
+        <%= image_tag 'gallery/home/269774-3840x2160-desktop-4k-family-guy-background-image.jpg', height: 564, width: 1248 %>
+        <div class="white-box-1">
+            <h1><%= t("home.secc2.title1") %></h1>
+            <p><%= t("home.secc2.title2") %></p>
+        </div>
+    </div>
 </div> 
-<div class="">
-    <p>Nuestros servicios</p>
+<div class="home-secc" style="margin-bottom: 100px;">
+    <h1 style="margin-bottom: 50px"><%= t("home.secc3") %></h1>
+    <div class="secc1-cat">
+        <div>
+            <%= image_tag 'gallery/home/269727-3840x2160-desktop-4k-family-guy-background-photo.jpg', height: 403, width: 305 %>
+            <div class="white-box">
+                <h1>Family Guy</h1>
+            </div>
+        </div>
+        <div style="margin-left: 9px;">
+            <%= image_tag 'gallery/home/269727-3840x2160-desktop-4k-family-guy-background-photo.jpg', height: 403, width: 305 %>
+            <div class="white-box">
+                <h1>Family Guy</h1>
+            </div>
+        </div>
+        <div style="margin-left: 9px;">
+            <%= image_tag 'gallery/home/269727-3840x2160-desktop-4k-family-guy-background-photo.jpg', height: 403, width: 305 %>
+            <div class="white-box">
+                <h1>Family Guy</h1>
+            </div>
+        </div>
+        <div style="margin-left: 9px;">
+            <%= image_tag 'gallery/home/269727-3840x2160-desktop-4k-family-guy-background-photo.jpg', height: 403, width: 305 %>
+            <div class="white-box">
+                <h1>Family Guy</h1>
+            </div>
+        </div>
+    </div>
 </div> 
-<div class="">
-    <p>sub</p>
+<div class="home-secc"  style="background-color: #000; padding-bottom: 50px">
+    <p style="color: #FFF;"><%= t("home.secc4") %></p>
+    
+    <%= form_with do |form| %>
+        <div>     
+            <%= form.text_field :email, placeholder: t("form.email"), class: "form1" %>
+            <%= form.text_field :name, placeholder: t("form.name"), class: "form1" %>
+        </div>
+        <div style="margin-top: 50px">
+            <%= form.submit t("form.send"), class: "form2" %>
+        </div>
+    <% end %>
+
 </div>
 <div class="">
-    <p>patrocinadores</p>
+    <h1><%= t("home.secc5") %></h1>
 </div>
 <div class="">
-    <p>lectura intereactiva</p>
+    <h1><%= t("home.secc6") %></h1>
 </div>

@@ -11,3 +11,18 @@ es:
       blog: "Blog"
       trabaja_con_nosotros: "Trabaja con nosotros"
       digitalizacion: "Digitalizacion"
+  home:
+    secc1: 
+      title: "Categorías Destacadas"
+      caption: "Nuestras categorias más consultadas"
+    secc2: 
+      title1: "Custom Banner"
+      title2: "texto de descripcion"
+    secc3: "Nuestros servicios"
+    secc4: "Subscribete para estar informado de todas las novedades"
+    secc5: "Patrocinadores"
+    secc6: "Lectura interactiva"
+  form:
+    email: "Email"
+    name: "Nombre"
+    send: "Enviar"

@@ -136,3 +136,40 @@ html, body {
         height: 150px;
     }
 }
+
+.white-box{
+    position: absolute;
+    background: white;
+    transform: translate(-7%, 343px);
+    width: 270px;
+    height: 60px;
+}
+
+.white-box-1{
+    position: absolute;
+    flex-direction: column;
+    text-align: left;
+    background: white;
+    transform: translate(-284px, 190px);
+    width: 680px;
+    height: 222px;
+}
+
+.home-secc{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .caption{
+        margin-top: -10px;
+    }
+}
+
+.form1 {
+    width: 20%;
+}
+.form2 {
+    background-color: $color-3;
+}
+
