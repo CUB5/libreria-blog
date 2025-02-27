@@ -166,10 +166,61 @@ html, body {
     }
 }
 
-.form1 {
-    width: 20%;
+.home-secc-5 {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #000;
+
+    .caption{
+        margin-top: -10px;
+    }
 }
-.form2 {
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Carousel 2*/
+.carousel-2 {
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Track con animación */
+.carousel-track {
+    animation: 35s slide infinite linear;
+}
+
+.carousel-track img {
+    height: 150px;
+    margin: 0 40px;
+}
+
+.form1 {
+    width: 265px;
+    height: 35px;
+    margin-left: 15px;
+    font-size: medium;
+}
+.form2 { 
+
+    color: #FFF;
     background-color: $color-3;
+    padding: 15px 25px;
+    border: none;
+
+    &:hover {
+        color: #000;
+        background-color: $color-4; 
+    }
 }
 

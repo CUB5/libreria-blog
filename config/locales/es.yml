@@ -1,7 +1,7 @@
 es:
   nav:
     navmenu:
-      libros: "Libros"
+      libros: "Libreria"
       servicios: "Servicios"
       ejemplos: "Ejemplos"
       contacto: "Contacto"
@@ -21,8 +21,9 @@ es:
     secc3: "Nuestros servicios"
     secc4: "Subscribete para estar informado de todas las novedades"
     secc5: "Patrocinadores"
-    secc6: "Lectura interactiva"
   form:
     email: "Email"
+    T&C: "He leído y acepto los "
+    T&C2: "Términos y Condiciones"
     name: "Nombre"
     send: "Enviar"

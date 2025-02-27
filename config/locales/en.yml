@@ -30,7 +30,7 @@
 en:
   nav:
     navmenu:
-      libros: "Books"
+      libros: "Bookshop"
       servicios: "Services"
       ejemplos: "Examples"
       contacto: "Contact"
@@ -40,3 +40,19 @@ en:
       blog: "Blog"
       trabaja_con_nosotros: "Work with us"
       digitalizacion: "Digitalization"
+  home:
+      secc1: 
+        title: "Top Categories"
+        caption: "More searched categories"
+      secc2: 
+        title1: "Custom Banner english"
+        title2: "Description text"
+      secc3: "Our Services"
+      secc4: "Subscribe for being informed"
+      secc5: "Sponsors"
+  form:
+    email: "Email"
+    T&C: "I have read and accept the "
+    T&C2: "Terms and Conditions"
+    name: "Name"
+    send: "Send"
