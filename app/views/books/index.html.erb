@@ -1,18 +1,21 @@
-<div class="mainpage-body">
-  <p style="color: green"><%= notice %></p>
+<div class="banner">
+     <%= render"layouts/banner", image: 'gallery/books/banner.jpg', title: "Libreria"  %>
+</div>
 
-  <% content_for :title, "Books" %>
+<p style="color: green"><%= notice %></p>
 
-  <h1>Books</h1>
+<% content_for :title, "Books" %>
 
-  <div id="books">
-    <% @books.each do |book| %>
-      <%= render book %>
-      <p>
-        <%= link_to "Show this book", book %>
-      </p>
-    <% end %>
-  </div>
+<h1>Books</h1>
 
-  <%= link_to "New book", new_book_path %>
+<div id="books">
+  <% @books.each do |book| %>
+    <%= render book %>
+    <p>
+      <%= link_to "Show this book", book %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New book", new_book_path %>
 </div>

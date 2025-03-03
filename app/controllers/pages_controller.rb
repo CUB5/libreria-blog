@@ -10,7 +10,6 @@ class PagesController < ApplicationController
     
         @images_carousel= images2.map { |image| ActionController::Base.helpers.asset_path("gallery/home/carousel2/#{image}") }
 
-
     end
 
     def show 
