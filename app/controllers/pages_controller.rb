@@ -13,8 +13,14 @@ class PagesController < ApplicationController
     end
 
     def show 
-        if template_exists?(params[:page], "pages")
-            render params[:page]
+        if params[:subpage]
+            template_path = "pages/#{params[:page]}/#{params[:subpage]}"
+          else
+            template_path = "pages/#{params[:page]}"
+          end
+
+        if template_exists?(template_path)
+            render template_path
         else
             render file: "#{Rails.root}/public/404.html", status: :not_found
         end

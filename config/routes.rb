@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root "pages#index"
 
     # Páginas dinámicas con restricciones de URL
-    get ':page', to: 'pages#show', constraints: { page: /about|documentation|work|digitalization|services|examples|contact/ }
+    get ':page(/:subpage)', to: 'pages#show', constraints: { page: /about|documentation|work|digitalization|services|examples|contact/ }
 
     # Rutas para libros
     resources :books
