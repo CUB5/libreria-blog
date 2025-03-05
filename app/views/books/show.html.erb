@@ -1,10 +1,57 @@
-<p style="color: green"><%= notice %></p>
+<div class="banner">
+    <%= render"layouts/banner", image: 'gallery/pages/about/banner.jpg', title: @book.title  %>
+</div>
 
-<%= render @book %>
+<p style="color: green"><%= notice %></p>
 
 <div>
   <%= link_to "Edit this book", edit_book_path(@book) %> |
   <%= link_to "Back to books", books_path %>
 
   <%= button_to "Destroy this book", @book, method: :delete %>
+</div>
+
+<%= render @book %>
+
+<div class="book-show">
+  <div class="books-box">
+    <%= image_tag 'gallery/pages/about/banner.jpg', class: "books-img"  %>
+  </div>
+  <div class="books-box">
+    <p><%= @book.synopsis %></p>
+  </div>
+</div>
+
+<div class="book-tabs">
+  <div class="">
+    <button class="" onclick="tabulador('Tab1')">Tab 1</button>
+    <button class="" onclick="tabulador('Tab2')">Tab 2</button>
+    <button class="" onclick="tabulador('Tab3')">Tab 3</button>
+  </div>
+  <div class="b-tabs">
+    <div id="Tab1" class="tab">
+      <h2>Tab 1</h2>
+      <p>London is the capital of England.</p>
+    </div>
+
+    <div id="Tab2" class="tab" style="display:none">
+      <h2>Tab 2</h2>
+      <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tab3" class="tab" style="display:none">
+      <h2>Tab 3</h2>
+      <p>Tokyo is the capital of Japan.</p>
+    </div>
+  </div>
+  <script>
+  function tabulador(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tab");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    document.getElementById(tabName).style.display = "block";  
+  }
+  </script>
 </div>
