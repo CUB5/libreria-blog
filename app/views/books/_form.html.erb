@@ -37,6 +37,26 @@
   </div>
 
   <div>
+    <%= form.label :featured_image, "Imagen destacada" %>
+    <%= form.file_field :featured_image %>
+  </div>
+
+  <div>
+    <%= form.label :featured_image, "Imagenes varias" %>
+    <%= form.file_field :extra_images, :multiple => true %>
+  </div>
+
+  <div>
+    <%= form.label :docs, "Documentos" %>
+    <%= form.file_field :docs, :multiple => true %>
+  </div>
+
+  <div>
+    <%= form.label :docs_en, "Documentos EN" %>
+    <%= form.file_field :docs_en, :multiple => true %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

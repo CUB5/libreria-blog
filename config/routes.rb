@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     get ':page(/:subpage)', to: 'pages#show', constraints: { page: /about|documentation|work|digitalization|services|examples|contact/ }
 
     # Rutas para libros
-    resources :books
+    resources :books do
+      member do
+        delete :remove_image
+      end
+    end
 
     # Rutas del blog
     resources :posts

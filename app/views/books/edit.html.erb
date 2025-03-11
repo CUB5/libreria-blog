@@ -10,3 +10,14 @@
   <%= link_to "Show this book", @book %> |
   <%= link_to "Back to books", books_path %>
 </div>
+
+<div class="test">
+  <% @book.extra_images.each do |img| %>
+    <div class="image-container">
+      <%= image_tag img, width: "300px", height: "300px" %>
+      
+      <%= button_to "Eliminar", remove_image_book_path(@book, image_id: img.id), method: :delete, data: { confirm: "¿Seguro que quieres eliminar esta imagen?" }, class: "delete-btn" %>
+    </div>
+  <% end %>
+</div>
+

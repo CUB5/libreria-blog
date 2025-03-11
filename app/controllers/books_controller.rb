@@ -38,6 +38,11 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
+        
+        if params[:book][:extra_images].present?
+          @book.extra_images.attach(params[:book][:extra_images])
+        end
+
         format.html { redirect_to @book, notice: "Book was successfully updated." }
         format.json { render :show, status: :ok, location: @book }
       else
@@ -57,6 +62,17 @@ class BooksController < ApplicationController
     end
   end
 
+  def remove_image
+    @book = Book.find(params[:id])
+
+    if @book.extra_images.attached?
+      image = @book.extra_images.find(params[:image_id]) # Buscar la imagen específica
+      image.purge # Eliminar la imagen
+    end
+  
+    redirect_to @book, notice: "Imagen eliminada correctamente."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
@@ -65,6 +81,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.expect(book: [ :title, :category, :content, :synopsis, :published ])
+      params.expect(book: [ :title, :category, :content, :synopsis, :published, :featured_image, extra_images: [], docs: [], docs_en: [] ])
     end
 end
