@@ -1,0 +1,16 @@
+<table id="book-documents">
+    <tr>
+        <th>Nombre</th>
+        <th>Archivo</th>
+    </tr>
+    <% book.each do |doc| %>
+        <tr>
+            <td>
+                <p><%= doc.filename %></p>
+            </td>
+            <td>
+                <%= link_to doc.filename, rails_blob_path(doc, disposition: "attachment") %>
+            </td>
+        </tr>
+    <% end %>
+</table>

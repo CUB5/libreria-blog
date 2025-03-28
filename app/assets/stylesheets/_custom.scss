@@ -318,8 +318,45 @@ html, body {
 
 .book-tabs{
     flex-direction: column;
+    margin-bottom: 80px;
+
+    .button{
+        background-color: $color-3;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .active{
+        background-color: black;
+    }
 }
 
-.b-tabs div{
+.b-tabs .tab{
     display: block;
+    width: 900px;
+    
 }
+
+#book-documents {
+    width: 100%;
+}
+
+#book-documents th{
+    color: white;
+    background-color: $color-1;
+}
+
+#book-documents tr{
+    text-align: center;
+}
+
+#book-documents tr:nth-child(even){background-color: #f2f2f2;}
+
+#book-documents tr:hover {background-color: #ddd;}

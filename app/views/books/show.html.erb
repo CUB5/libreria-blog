@@ -11,8 +11,6 @@
   <%= button_to "Destroy this book", @book, method: :delete %>
 </div>
 
-<%= render @book %>
-
 <div class="book-show">
   <div class="books-box">
     <%= image_tag @book.featured_image, class: "books-img"  %>
@@ -22,54 +20,62 @@
   </div>
 </div>
 
-<div class="test" style="margin-bottom: 50px;">
+<div >
   <% @book.extra_images.each do |img| %>
     <%= image_tag img, width: "330px", height: "330px"  %>
   <% end %>
 </div>
 
 <div class="book-tabs">
-  <div class="">
-    <button class="" onclick="tabulador('Tab1')">Contenido</button>
-    <button class="" onclick="tabulador('Tab2')">Sinopsis</button>
-    <button class="" onclick="tabulador('Tab3')">Documentacion</button>
+  <div>
+    <button class="button tablink active" onclick="tabulador(event,'Tab1')">Contenido</button>
+    <button class="button tablink" onclick="tabulador(event,'Tab2')">Sinopsis</button>
+    <button class="button tablink" onclick="tabulador(event,'Tab3')">Documentacion</button>
   </div>
   <div class="b-tabs">
     <div id="Tab1" class="tab">
-      <h2>Contenido</h2>
-      <p>Contenido completo del libro/coleccion</p>
-      <p><%= @book.content %></p>
+      <h2>Información del producto:</h2>
+      <p>
+        <strong>Titulo:</strong>
+        <%= @book.title %>
+      </p>
+      <p>
+        <strong>Categoria:</strong>
+        <%= @book.category %>
+      </p>
+      <p>
+        <strong>Publicado:</strong>
+        <%= @book.published %>
+      </p>
     </div>
 
     <div id="Tab2" class="tab" style="display:none">
-      <h2>Sinopsis</h2>
-      <p>Sinopsis del producto</p>
       <p><%= @book.synopsis %></p>
     </div>
 
     <div id="Tab3" class="tab" style="display:none">
-      <h2>Documentacion</h2>
-      <p>Catálogo de productos y esquemas</p>
+      <h2>Catálogo de productos y esquemas:</h2>
       <% if I18n.locale == :es %>
-        <% @book.docs.each do |doc| %>
-          <%= link_to doc.filename, rails_blob_path(doc, disposition: "attachment") %>
-        <% end %>
+        <%= render"docs", book: @book.docs %>
       <% elsif I18n.locale == :en %>
-        <% @book.docs_en.each do |doc| %>
-          <%= link_to doc.filename, rails_blob_path(doc, disposition: "attachment") %>
-        <% end %>
+        <%= render"docs", book: @book.docs_en %>
       <% end %>
     </div>
   </div>
 
   <script>
-  function tabulador(tabName) {
-    var i;
-    var x = document.getElementsByClassName("tab");
+  function tabulador(event, tabName) {
+    var i, x = document.getElementsByClassName("tab");
+    var tablinks;
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none";  
     }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
     document.getElementById(tabName).style.display = "block";  
+    event.currentTarget.className += " active";
   }
   </script>
 </div>
