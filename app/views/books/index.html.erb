@@ -6,15 +6,17 @@
 
 <% content_for :title, "Books" %>
 
-<h1>Books</h1>
-
 <%= link_to "New book", new_book_path %>
 
 <div id="books">
-  <% @books.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
-  <% end %>
+  <div class="books-grid">
+    <% @books.each do |book| %>
+      <div class="books-box">
+        <%= link_to book do %>
+          <%= image_tag book.featured_image %>
+          <span><%= book.title %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

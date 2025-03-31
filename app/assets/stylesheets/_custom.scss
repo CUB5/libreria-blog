@@ -360,3 +360,42 @@ html, body {
 #book-documents tr:nth-child(even){background-color: #f2f2f2;}
 
 #book-documents tr:hover {background-color: #ddd;}
+
+.books-grid{
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    width: 1246px;
+    align-items: center;
+    margin: 50px;
+
+    .books-box{
+        flex-direction: column;
+
+        a{
+            display: block;
+
+            img{
+                width: 395px;
+                height: 209px;
+                display: block;
+            }
+            
+            span {
+                position: absolute;
+                background-color: #FFF;
+                transform: translate(0%, -60px);
+                width: 270px;
+                height: 40px;
+          
+                color: #000;
+                font-size: 18px;
+                word-wrap: break-word;
+                text-align: start;
+                padding-top: 20px;
+                padding-left: 10px;
+            }
+        }
+    }
+
+}
