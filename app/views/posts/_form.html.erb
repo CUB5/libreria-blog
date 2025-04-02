@@ -22,6 +22,11 @@
   </div>
 
   <div>
+    <%= form.label :featured_image, "Imagen destacada" %>
+    <%= form.file_field :featured_image %>
+  </div>
+
+  <div>
     <%= form.label :published, style: "display: block" %>
     <%= form.checkbox :published %>
   </div>
@@ -30,3 +35,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+

@@ -397,5 +397,48 @@ html, body {
             }
         }
     }
+}
 
+.documents{
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 1140px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+    thead tr th{
+        text-align: center;
+        background-color: $color-4;
+    }
+
+    table td:nth-child(3) {
+        text-align: center;
+    }
+    
+    td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+    }
+
+    th.desactive-sort {
+        font-weight: normal;
+      }
+
+    th.order-up::after{
+        content: "▲";
+        font-size: 0.9em;
+        margin-left: 4px;
+    }
+    
+    th.order-down::after{
+        content: "▼";
+        font-size: 0.9em;
+        margin-left: 4px;
+    }
+    
+    tr:nth-child(even) {
+    background-color: #dddddd;
+    }
 }

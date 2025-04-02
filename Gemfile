@@ -65,3 +65,4 @@ end
 gem "cssbundling-rails", "~> 1.4"
 
 gem "i18n", "~> 1.14.7"
+gem "mobility"

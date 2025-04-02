@@ -2,3 +2,115 @@
     <%= render"layouts/banner", image: 'gallery/pages/documentation/banner.jpg', title: 'Documentación'  %>
 </div>
 
+<div class="documents">
+    <table id="sortable-table">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)" class="order-up">Elemento</th>
+                <th onclick="sortTable(1)" class="desactive-sort">Categoria</th>
+                <th>Documento</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% if I18n.locale == :es %>
+            <tr>
+                <td>Doc 1</td>
+                <td>cat 1</td>
+                <td><%= link_to asset_path('/docs/es/doc.pdf'), target: '_blank' do %>
+                    <%= image_tag 'file-pdf-solid.svg', size: "24x24", alt: "PDF"  %>
+                <% end %>
+                </td>
+            </tr>
+            <tr>
+                <td>Doc 2</td>
+                <td>cat 1</td>
+                <td><%= link_to asset_path('/docs/es/doc2.pdf'), target: '_blank' do %>
+                    <%= image_tag 'file-pdf-solid.svg', size: "24x24", alt: "PDF"  %>
+                <% end %></td>
+            </tr>
+            <tr>
+                <td>Doc 3</td>
+                <td>cat 4</td>
+                <td><%= link_to asset_path('/docs/es/doc3.pdf'), target: '_blank' do %>
+                    <%= image_tag 'file-pdf-solid.svg', size: "24x24", alt: "PDF"  %>
+                <% end %></td>
+            </tr>
+            <tr>
+                <td>Doc 4</td>
+                <td>cat 3</td>
+                <td><%= link_to asset_path('/docs/es/doc4.pdf'), target: '_blank' do %>
+                    <%= image_tag 'file-pdf-solid.svg', size: "24x24", alt: "PDF"  %>
+                <% end %></td>
+            </tr>
+        <% end %>
+        <% if I18n.locale == :en %>
+            <tr>
+                <td>Doc 1</td>
+                <td>cat 1</td>
+                <td><%= link_to asset_path('/docs/en/doc_en.pdf'), target: '_blank' do %>
+                    <%= image_tag 'file-pdf-solid.svg', size: "24x24", alt: "PDF"  %>
+                <% end %></td>
+            </tr>
+            <tr>
+                <td>Doc 2</td>
+                <td>cat 1</td>
+                <td><%= link_to asset_path('/docs/en/doc2_en.pdf'), target: '_blank' do %>
+                    <%= image_tag 'file-pdf-solid.svg', size: "24x24", alt: "PDF"  %>
+                <% end %></td>
+            </tr>
+            <tr>
+                <td>Doc 3</td>
+                <td>cat 2</td>
+                <td><%= link_to asset_path('/docs/en/doc3_en.pdf'), target: '_blank' do %>
+                    <%= image_tag 'file-pdf-solid.svg', size: "24x24", alt: "PDF"  %>
+                <% end %></td>
+            </tr>
+            <tr>
+                <td>Doc 4</td>
+                <td>cat 3</td>
+                <td><%= link_to asset_path('/docs/en/doc4_en.pdf'), target: '_blank' do %>
+                    <%= image_tag 'file-pdf-solid.svg', size: "24x24", alt: "PDF"  %>
+                <% end %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
+
+<script>
+let sortDirection = {}
+
+function sortTable(columnIndex) {
+  const table = document.getElementById("sortable-table");
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.querySelectorAll("tr"));
+
+  sortDirection[columnIndex] = !sortDirection[columnIndex];
+  const direction = sortDirection[columnIndex] ? 1 : -1;
+
+  const sortedRows = rows.sort((a, b) => {
+    const aText = a.cells[columnIndex].innerText.toLowerCase();
+    const bText = b.cells[columnIndex].innerText.toLowerCase();
+    return aText.localeCompare(bText) * direction;
+  });
+
+  // Elimina las filas actuales y añade las ordenadas
+  sortedRows.forEach(row => tbody.appendChild(row));
+
+  // Resaltar cabecera activa
+  const headers = table.querySelectorAll("th");
+  headers.forEach((th, i) => {
+    if (i < 2) {
+        // Limpieza inicial
+        th.classList.remove("order-up", "order-down", "desactive-sort");
+
+        if (i === columnIndex) {
+            th.classList.add(sortDirection[columnIndex] ? "order-up" : "order-down");
+        } else {
+            // Marcar como desactivada
+            th.classList.add("desactive-sort");
+        }
+    }
+  });
+}
+</script>
