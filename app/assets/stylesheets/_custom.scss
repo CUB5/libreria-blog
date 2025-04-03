@@ -410,6 +410,7 @@ html, body {
     thead tr th{
         text-align: center;
         background-color: $color-4;
+        cursor: pointer;
     }
 
     table td:nth-child(3) {
@@ -439,6 +440,96 @@ html, body {
     }
     
     tr:nth-child(even) {
-    background-color: #dddddd;
+        background-color: #dddddd;
     }
+}
+
+#posts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1140px;
+    margin: 40px auto;
+    padding: 0 20px;
+
+    .post {
+        &:not(:last-child){
+            border-bottom: 1px solid #ddd;
+        }
+        padding-bottom: 40px;
+
+        a {
+            display: flex;
+            gap: 40px;
+            text-decoration: none;
+            color: inherit;
+          }
+    }
+
+
+    .post-image img {
+        width: 423px;
+        height: 282px;
+    }
+
+    .post-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 16px;
+            color: #111;
+        }
+
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #444;
+        }
+    }
+}
+
+.post-wrapp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+
+    .post{
+        display: flex;
+        flex-direction: column;        
+        align-items: center;
+
+        width: 65%;
+        background-color: white;
+        padding-bottom: 50px;
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img{
+                width: 550px;
+            }
+        }
+
+        .content {
+            max-width: 530px;
+        }
+    }
+}
+
+.button-custom{
+    padding: 10px 20px;
+    background-color: $color-2;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.button-custom:hover{
+    background-color: $color-3;
 }

@@ -7,4 +7,14 @@
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
 
-<%= render @post %>
+<div class="post-wrapp">
+  <div class="post">
+    <div class="header">
+      <h1><%= @post.title %></h1>
+        <%= image_tag(@post.featured_image.presence || 'default-image.jpg') %>
+    </div>    
+    <div class="content">
+      <p><%= @post.content %></p>
+    </div>
+  </div>
+</div>

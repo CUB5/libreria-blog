@@ -6,13 +6,22 @@
 
 <% content_for :title, "Posts" %>
 
-<%= link_to "New post", new_post_path %>
+<div>
+  <%= link_to "New post", new_post_path, class: "button-custom" %>
+</div>
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+    <div id="<%= dom_id post %>" class="post">
+      <%= link_to post do %>
+        <div class="post-image">
+          <%= image_tag(post.featured_image.presence || 'default-image.jpg') %>
+        </div>
+        <div class="post-content">
+          <h2><%= post.title %></h2>
+          <p><%= truncate(post.content, length: 300) %></p>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 </div>

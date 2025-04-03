@@ -6,14 +6,16 @@
 
 <% content_for :title, "Books" %>
 
-<%= link_to "New book", new_book_path %>
+<div>
+  <%= link_to "New book", new_book_path, class: "button-custom" %>
+</div>
 
 <div id="books">
   <div class="books-grid">
     <% @books.each do |book| %>
       <div class="books-box">
         <%= link_to book do %>
-          <%= image_tag book.featured_image %>
+          <%= image_tag(book.featured_image|| 'default-image.jpg') %>
           <span><%= book.title %></span>
         <% end %>
       </div>
